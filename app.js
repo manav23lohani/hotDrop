@@ -5,7 +5,6 @@ const app = express()
 const filerouter = require('./routes/files')
 const getFile = require('./routes/getfile')
 const downloadFile = require('./routes/download')
-const path = require('path')
 require('dotenv').config()
 
 app.set('view engine','ejs')
@@ -16,7 +15,10 @@ mongoose.connect(process.env.DB_LINK,{
     useUnifiedTopology:true,useNewUrlParser:true},
     ()=>{console.log('db connected')
 })
-// Various routes 
+// Various routes
+app.get('/',(req,res)=>{
+    res.render('upload')
+})
 app.use('/fileupload',filerouter)
 app.use('/files',getFile)
 app.use('/filedownload',downloadFile)
