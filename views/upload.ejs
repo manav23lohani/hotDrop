@@ -18,9 +18,17 @@
     <form action="/fileupload" method="POST" class="drag-area" enctype="multipart/form-data">
         <input type="file" name="myfile">
         <i class="fas fa-cloud-upload-alt icon"></i>
-        <h2>Drag your files here or Click here</h2>
+        <h2 class="uploading">Drag your files here or Click here</h2>
         <button type="submit">Upload</button>
     </form>
+    <script>
+        const btn = document.querySelector('button');
+        const uploading = document.querySelector('.uploading');
+        btn.addEventListener('click',function(){
+            uploading.innerHTML="Uploading...";
+            btn.style.display="none";        
+        })
+    </script>
 </body>
 
 </html>
