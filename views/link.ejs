@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Drop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="header">
+        <p class="heading">Hot Drop</p>
+        <p class="subhead">File sharing made easy</p>
+    </div>
+    <i class="fa-regular fa-circle-check"></i>
+    <h1>File uploaded successfully</h1>
+    <br><br>
+    <h2>Generated Download Link⬇️</h2>
+    <textarea id="content" readonly><%=downloadLink%></textarea>
+    <input type="button" id="copy" value="Copy URL" />
+    <script>
+        const cpy = document.getElementById("copy");
+        const link = document.getElementById("content");
+        cpy.addEventListener('click', function (e) {
+            e.preventDefault();
+            link.select();
+            document.execCommand("copy");
+        });
+    </script>
+</body>
+
+</html>

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hot Drop</title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 </head>
 
 <body>
@@ -15,20 +15,20 @@
         <p class="heading">Hot Drop</p>
         <p class="subhead">File sharing made easy</p>
     </div>
-    <form action="/fileupload" method="POST" class="drag-area" enctype="multipart/form-data">
-        <input type="file" name="myfile">
-        <i class="fas fa-cloud-upload-alt icon"></i>
-        <h2 class="uploading">Drag your files here or Click here</h2>
-        <button type="submit">Upload</button>
-    </form>
+        <form action="/fileupload" method="POST" class="drag-area" enctype="multipart/form-data">
+            <input type="file" name="myfile">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <h2 class="uploading">Drag your files here or Click here</h2>
+            <button type="submit">Upload</button>
+        </form>
     <script>
-        const btn = document.querySelector('button');
-        const uploading = document.querySelector('.uploading');
-        btn.addEventListener('click',function(){
-            uploading.innerHTML="Uploading...";
-            btn.style.display="none";        
-        })
-    </script>
+        const btn = document.querySelector("button");
+        const uploading = document.querySelector(".uploading");
+        btn.addEventListener('click', function () {
+            uploading.innerHTML = "Uploading...";
+            btn.style.display = "none";
+        });
+        </script>
 </body>
 
 </html>

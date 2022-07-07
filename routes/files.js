@@ -31,7 +31,7 @@ filerouter.post('/', (req, res) => {
             size: req.file.size
         })
         //response link
-        res.json({ file: `${process.env.APP_BASE_URL}/files/${response.uuid}`})
+        res.render('link',{ downloadLink: `${process.env.APP_BASE_URL}/files/${response.uuid}` })
     })
 })
 module.exports = filerouter
