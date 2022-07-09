@@ -19,19 +19,24 @@ let upload = multer({
 
 filerouter.post('/', (req, res) => {
     //store file
-    upload(req, res, async (err) => {
-        //validate request
-        if (err) {
-            return res.status(500).send({ error: err.message })
-        }
-        const response = await File.create({
-            filename: req.file.filename,
-            uuid: uuid4(),
-            path: req.file.path,
-            size: req.file.size
+    try {
+        upload(req, res, async (err) => {
+            //validate request
+            if (err) {
+                return res.status(500).send({ error: err.message })
+            }
+            const response = await File.create({
+                filename: req.file.filename,
+                uuid: uuid4(),
+                path: req.file.path,
+                size: req.file.size
+            })
+            //response link
+            res.render('link', { downloadLink: `${process.env.APP_BASE_URL}/files/${response.uuid}` })
         })
-        //response link
-        res.render('link',{ downloadLink: `${process.env.APP_BASE_URL}/files/${response.uuid}` })
-    })
+    }
+    catch (err) {
+        res.status(400).send(err);
+    }
 })
 module.exports = filerouter
