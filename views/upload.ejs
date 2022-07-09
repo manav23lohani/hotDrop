@@ -16,18 +16,21 @@
         <p class="subhead">File sharing made easy</p>
     </div>
         <form action="/fileupload" method="POST" class="drag-area" enctype="multipart/form-data">
-            <input type="file" name="myfile">
+            <input required id="file" type="file" name="myfile">
             <i class="fas fa-cloud-upload-alt"></i>
             <h2 class="uploading">Drag your files here or Click here</h2>
             <button type="submit">Upload</button>
         </form>
     <script>
         const btn = document.querySelector("button");
+        const file = document.getElementById("file");
         const uploading = document.querySelector(".uploading");
+        if(file.files.length != 0){
         btn.addEventListener('click', function () {
             uploading.innerHTML = "Uploading...";
             btn.style.display = "none";
         });
+    }
         </script>
 </body>
 
