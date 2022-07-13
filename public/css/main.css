@@ -97,3 +97,6 @@ i {
   border-radius: 5px;
   font-size: 1.5em;
 }
+h1, h2{
+  text-align: center;
+}
