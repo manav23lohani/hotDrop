@@ -1,6 +1,5 @@
 const express = require('express')
 const mongoose= require('mongoose')
-const ejs = require('ejs')
 const app = express()
 const filerouter = require('./routes/files')
 const getFile = require('./routes/getfile')
@@ -9,6 +8,7 @@ require('dotenv').config()
 
 app.set('view engine','ejs')
 app.set('views','views')
+app.use(express.json());
 app.use(express.static('public'))
 
 mongoose.connect(process.env.DB_LINK,{

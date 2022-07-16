@@ -16,6 +16,14 @@ const fileSchema = mongoose.Schema({
         type: String, 
         required: true 
     },
+    sender: { 
+        type: String, 
+        required: false
+    },
+    reciever: {
+        type: String,
+        required: false
+    }
 }, { timestamps: true })
 
 module.exports = mongoose.model('File', fileSchema);
