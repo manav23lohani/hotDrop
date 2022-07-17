@@ -14,16 +14,25 @@
     <div class="header">
         <p class="heading">Hot Drop</p>
         <p class="subhead">File sharing made easy</p>
+        <h2>File uploaded successfully <i class="fa-regular fa-circle-check tick-icon"></i></h2>
     </div>
-    <i class="fa-regular fa-circle-check"></i>
-    <h1>File uploaded successfully</h1>
-    <br><br>
-    <h2>Generated Download Link⬇️</h2>
-    <textarea id="content" readonly><%=downloadLink%></textarea>
-    <input type="button" id="copy" value="Copy URL" />
+
+    <div style="width:fit-content">
+        <input id="content" readonly value="<%=downloadLink%>">
+        <i class="fa-regular fa-copy"></i>
+        <br>
+        <h2>OR</h2>
+    </div>
+    <form action="/files/send" method="POST" class="form2">
+        <div>Send via email</div>
+        <input type="email" id="emailFrom" name="emailFrom" placeholder="From" required>
+        <input type="email" id="emailTo" name="emailTo" placeholder="To" required>
+        <input type="hidden" name="uuid" value="<%=uuid%>">
+        <button type="submit">Send</button>
+    </form>
     <script>
-        const cpy = document.getElementById("copy");
-        const link = document.getElementById("content");
+        const cpy = document.querySelector('.fa-copy');
+        const link = document.querySelector('#content');
         cpy.addEventListener('click', function (e) {
             e.preventDefault();
             link.select();

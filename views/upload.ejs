@@ -15,13 +15,13 @@
         <p class="heading">Hot Drop</p>
         <p class="subhead">File sharing made easy</p>
     </div>
-    <form action="/fileupload" method="POST" class="drag-area" enctype="multipart/form-data">
+    <form  action="/fileupload" method="POST" class="drag-area form" enctype="multipart/form-data">
         <input required id="file" type="file" name="myfile">
-        <i class="fas fa-cloud-upload-alt"></i>
+        <i class="fas fa-cloud-upload"></i>
         <h2 class="uploading">Drag your files here or Click here</h2>
         </div>
         <button id="btn" type="submit">Upload</button>
-    </form>
+    </form class="form">
     <script>
         const btn = document.getElementById("btn");
         const file = document.getElementById("file");

@@ -10,7 +10,7 @@ body {
 
 .header {
   display: flex;
-  margin-bottom: 10vh;
+  margin-bottom: 2vh;
   flex-direction: column;
   justify-content: center;
 }
@@ -28,10 +28,10 @@ body {
   font-family: cursive;
   color: whitesmoke;
   font-size: 25px;
-  margin: auto;
+  margin: 0 auto 10vh auto;
 }
 
-form {
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,13 +43,13 @@ form {
   border: 4px dashed #fff;
 }
 
-form h2 {
+.form h2 {
   text-align: center;
   color: #ffffff;
   font-family: Arial;
 }
 
-form input {
+.form input {
   position: absolute;
   margin: 0;
   padding: 0;
@@ -59,7 +59,7 @@ form input {
   opacity: 0;
 }
 
-form button,#copy {
+.form button{
   padding: 10px 25px;
   margin-top: 70px;
   font-size: 20px;
@@ -73,30 +73,76 @@ form button,#copy {
   transition: all ease-in-out 300ms;
 }
 
-#copy{
-  margin-top: 50px;
-}
-
-form button:hover,#copy:hover {
+.form button:hover {
   transform: scale(1.1);
 }
 
-form button:active {
+.form button:active {
   border: 0;
 }
 
-i {
-  margin: 10px 0 10px 0;
+.fa-cloud-upload {
   font-size: 90px;
   color: white;
+  margin-top: 1.3rem;
 }
+
+.tick-icon{
+  font-size: 50px;
+  margin: 0;
+}
+
 #content{
   resize: none;
-  width: min(80%,700.4px);
+  width: min(55vw,400px);
   height: fit-content;
   border-radius: 5px;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 h1, h2{
   text-align: center;
+  color: hsl(237, 36%, 20%);
+}
+.form2{
+  width: min(65vw,400px);
+  padding: 1.2rem;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
+  
+}
+
+.form2 div{
+  color: hsl(237, 36%, 20%);
+  font-weight: 600;
+}
+
+.form2 input{
+  background: transparent;
+  width: 90%;
+  border: none;
+  outline: none;
+  height: 1.5rem;
+  letter-spacing: 2px;
+  box-shadow: -2px -2px 2px rgba(0, 0, 0, .1) inset;
+  font-size: 1rem;
+  margin-top: .7rem;
+}
+.form2 button{
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
+  background-color: teal;
+  color: whitesmoke;
+  border: none;
+
+}
+.fa-copy{
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
 }

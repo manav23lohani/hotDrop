@@ -32,7 +32,7 @@ filerouter.post('/', (req, res) => {
                 size: req.file.size
             })
             //response link
-            res.render('link', { downloadLink: `${process.env.APP_BASE_URL}/files/${response.uuid}` })
+            res.render('link', { downloadLink: `${process.env.APP_BASE_URL}/files/${response.uuid}`, uuid: response.uuid})
         })
     }
     catch (err) {

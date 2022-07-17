@@ -1,3 +1,4 @@
+const { json } = require('express')
 const express = require('express')
 const File = require('../models/file')
 const getFile = express.Router()
@@ -21,6 +22,7 @@ getFile.get('/:uuid', async (req, res) => {
     }
 })
 getFile.post('/send', async (req, res) => {
+    // console.log(req.body.uuid);
     const { uuid, emailTo, emailFrom } = req.body;
     if (!uuid || !emailTo || !emailFrom) {
         return res.status(422).send({ error: 'All fields are required' });
@@ -48,7 +50,7 @@ getFile.post('/send', async (req, res) => {
                 expires: '24 hours'
             })
         }).then(() => {
-            return res.json({ success: true });
+            return res.redirect(process.env.APP_BASE_URL);
         }).catch(err => {
             return res.status(500).json({ error: 'Error in email sending.' });
         });
